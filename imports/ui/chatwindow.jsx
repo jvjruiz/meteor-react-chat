@@ -47,7 +47,6 @@ class ChatWindow extends Component {
         {this.props.currentUser ?
           <form className = 'input-box' onSubmit={this.onSubmit.bind(this)} >
             <input type='text' ref = 'textInput' placeholder='Type out message here' />
-            <input type='text' ref ='userTo' placeholder='Type the username of who you would like to message'/>
             <input type='submit' />
           </form> : ''
         }

@@ -11,7 +11,7 @@ import ChatWindow from '../imports/ui/chatwindow.jsx'
 Meteor.startup(() => {
 	render(
 		<Router history={browserHistory}>
-			<Route path="/" component={App} />
+			<Route path ='/' component={App} />
     		<Route path="/chatwindow/:currentuser/:receivinguser" component={ChatWindow} />
   		</Router>, 
   		document.getElementById('render-target')
