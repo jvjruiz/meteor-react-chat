@@ -19,7 +19,7 @@ class User extends Component {
 		return (
 			<li className='user' onClick = {this.onClick}>
 				<Link to={this.url()}>
-					<button>{this.props.user.username}</button>
+					<button className='user-button'>{this.props.user.username}</button>
 				</Link>
 			</li>
 		)

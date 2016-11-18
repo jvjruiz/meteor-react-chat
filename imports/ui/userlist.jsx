@@ -35,7 +35,7 @@ class UserList extends Component {
 						</ul>
 					</div> 
 					:
-					<h1> Please Login to Continue </h1>
+					<h1 className = 'login-reminder'> Please Login to Continue </h1>
 				}
 			</div>
 		)

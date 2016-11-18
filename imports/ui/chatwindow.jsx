@@ -40,14 +40,14 @@ class ChatWindow extends Component {
 	render() {
     return (
       <div className = 'chat-window'>
-
+        <h1 className ='chat-name-display'> Chat between {this.props.params.currentuser} and {this.props.params.receivinguser}</h1>
         <div className ='message-box'>
           {this.renderMessages()}
         </div>
         {this.props.currentUser ?
           <form className = 'input-box' onSubmit={this.onSubmit.bind(this)} >
-            <input type='text' ref = 'textInput' placeholder='Type out message here' />
-            <input type='submit' />
+            <input className = 'input-text' type='text' ref = 'textInput' placeholder='Type out message here' />
+            <input className = 'submit-button' type='submit' />
           </form> : ''
         }
       </div>
