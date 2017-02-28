@@ -1,7 +1,7 @@
-import { Meteor } from 'meteor/meteor';
+import {Meteor} from 'meteor/meteor';
 
 if(Meteor.isServer) {
-	Meteor.publish('users', function() {
-		return Meteor.users.find({})
+	Meteor.publish('allUsers', function() {
+		return Meteor.users.find({});
 	})
 }

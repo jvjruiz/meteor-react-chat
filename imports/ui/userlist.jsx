@@ -47,7 +47,7 @@ UserList.propTypes = {
 }
 
 export default createContainer(() => {
-	Meteor.subscribe('users');
+	Meteor.subscribe('allUsers');
 	return {
 		users: Meteor.users.find({}).fetch(),
 		currentUser: Meteor.user()
