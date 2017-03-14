@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import {Meteor} from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
+import {Link} from 'react-router';
 
 import {Messages} from '../api/messages.js'
 
@@ -11,8 +12,11 @@ import Message from './message.jsx'
 //Chatwindow component
 
 class ChatWindow extends Component {
-	componentDidMount() {
+
+	componentDidUpdate() {
     const receivingUser = this.props.params.receivingUser
+    const objDiv = document.getElementById('message-box');
+    objDiv.scrollTop = objDiv.scrollHeight;
   }
 
   onSubmit(event) {
@@ -26,7 +30,7 @@ class ChatWindow extends Component {
 
 	renderMessages() {
 		let messages = this.props.messages;
-		return messages.map((message) => {
+		return messages.map((message, i) => {
 			return (
 				<Message
           className = 'message-text' 
@@ -40,8 +44,13 @@ class ChatWindow extends Component {
 	render() {
     return (
       <div className = 'chat-window'>
-        <h1 className ='chat-name-display'> Chat between {this.props.params.currentuser} and {this.props.params.receivinguser}</h1>
-        <div className ='message-box'>
+        <div className = 'chat-window-header'>
+          <Link to ='/'>
+            <h1 className = 'back-button'>←</h1>
+          </Link>
+          <h1 className ='chat-name-display'> Chat between {this.props.params.currentuser} and {this.props.params.receivinguser}</h1>
+        </div>
+        <div id = 'message-box'>
           {this.renderMessages()}
         </div>
         {this.props.currentUser ?
@@ -62,8 +71,6 @@ ChatWindow.propTypes = {
 
 export default createContainer(({params}) => {
   Meteor.subscribe('Messages');
-
-  //finish this later
   return {
     currentUser: Meteor.user(),
     messages: Messages.find({

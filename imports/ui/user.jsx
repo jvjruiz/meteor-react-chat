@@ -6,7 +6,6 @@ import {createContainer} from 'meteor/react-meteor-data';
 
 class User extends Component {
 	url(){
-		console.log(this.props.currentUser)
 		return '/chatwindow/' + this.props.currentUser.username + '/' + this.props.user.username
 	}
 
