@@ -4,8 +4,8 @@ An application that will aid you in learning the Japanese language developed by 
 
 [Live Demo](https://japanesex.herokuapp.com/)
 
-![Screenshot](client/assets/spaced-repetition-screenshot1.png)
-![Screenshot](client/assets/spaced-repetition-screenshot2.png)
+![Screenshot](client/assets/meteor-react-landing)
+![Screenshot](client/assets/meteor-react-window.png)
 
 ## A little bit about Japanese X
 
